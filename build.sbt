@@ -1,7 +1,7 @@
 // shadow sbt-scalajs' crossProject and CrossType from Scala.js 0.6.x
 import sbtcrossproject.CrossPlugin.autoImport.{crossProject, CrossType}
 
-lazy val fs2AwsV = "2.0.0-M5"
+lazy val fs2AwsV = "2.0.0-M6-SNAPSHOT"
 
 lazy val `multi-runtime-lambda-demo` =
   crossProject(JSPlatform, JVMPlatform)
@@ -28,6 +28,7 @@ lazy val `multi-runtime-lambda-demo` =
           "io.circe" %%% "circe-generic-extras" % circeV,
           "io.circe" %%% "circe-optics" % "0.12.0",
           "com.chuusai" %%% "shapeless" % "2.3.3",
+          "com.dwolla" %%% "fs2-aws-lambda-io-app" % fs2AwsV,
         ) ++
           Seq(
             "org.scalatest" %%% "scalatest" % "3.0.8",
